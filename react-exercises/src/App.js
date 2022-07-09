@@ -7,9 +7,9 @@ import { Welcome } from "./Welcome"
 
 export class App extends React.Component {
     render () {
-        return <div> 
-            <div><Hello /> </div>
-            <div> <Welcome name ="Andrea" /> </div>
+        return <div>
+            <Hello />
+            <Welcome name= "Andrea" />
             </div>
     }
 }
