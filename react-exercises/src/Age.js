@@ -8,13 +8,13 @@ export class Age extends React.Component{
     render () {
         return <p>
             Your age is
-            {(this.props.value >= 18 || this.props.value ===Age.defaultProps.value)
+            {(this.props.value >= 18 && this.props.value <= 65)
              ? this.props.value
-             : 'lower than 18'}
+             : ' not between 18 and 65'}
              </p>
     }
 }
 
 Age.defaultProps = {
-    value: "not specified",
+    //value: "not specified",
 }
