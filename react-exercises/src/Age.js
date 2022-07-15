@@ -7,12 +7,7 @@ import React from "react";
 export class Age extends React.Component{
     render () {
         return <p>
-            Your age is {
-            this.props.value
-            ? this.props.value
-            : 'not specified'
-            
-            }
+            Your age is {this.props.value}
              </p>
     }
 }
