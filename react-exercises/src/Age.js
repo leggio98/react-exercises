@@ -7,14 +7,16 @@ import React from "react";
 export class Age extends React.Component{
     render () {
         return <p>
-            Your age is
-            {(this.props.value >= 18 || this.props.value ===Age.defaultProps.value)
-             ? this.props.value
-             : 'lower than 18'}
+            Your age is {
+            this.props.value
+            ? this.props.value
+            : 'not specified'
+            
+            }
              </p>
     }
 }
 
 Age.defaultProps = {
-    value: "not specified",
+  //  value: "not specified",
 }
