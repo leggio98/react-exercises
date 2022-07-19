@@ -12,10 +12,18 @@ export class Login extends React.Component {
     state = {
         username: '',
         password: '',
-        remember: false,
+        remember: false
     }
 loginButtonClick = () => {
     this.props.onLogin(this.state)
+}
+
+formReset = () => {
+    this.setState({
+        username: '',
+        password: '',
+        remember: false
+    })
 }
     handleChanger = (event) => {
         const value = event.target.value
@@ -47,7 +55,7 @@ loginButtonClick = () => {
             <input
             name = 'remember'
             type = 'checkbox'
-            value = {this.state.remember}
+            checked = {this.state.remember}
             onChange = {this.handleChanger}
             />
             <button 
@@ -55,6 +63,10 @@ loginButtonClick = () => {
             disabled = {!this.state.username || !this.state.password}
              onClick={this.loginButtonClick}>
                 Login
+            </button>
+            <button
+            onClick={this.formReset}>
+                Reset
             </button>
             </div>
         )
