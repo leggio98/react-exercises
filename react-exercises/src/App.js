@@ -6,13 +6,14 @@ import { ClickTracker } from "./ClickTracker"
 import { Counter } from "./Counter"
 import { Hello } from "./Hello"
 import { Welcome } from "./Welcome"
+import { InteractiveWelcome } from "./InteractiveWelcome"
 
 
 export class App extends React.Component {
     render () {
         return <div>
             <Hello />
-            <Welcome value= {17} name={<strong>Andrea</strong>}  />
+            <InteractiveWelcome value= {17} name={<strong>Andrea</strong>}  />
             <Counter />
             <ClickCounter />
             <ClickTracker />
