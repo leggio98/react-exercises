@@ -15,11 +15,6 @@ class TodoList extends React.Component {
             items: [...prevState.items, prevState.value],
             value: '',
         }));
-        
-        
-        
-
-        
     }
     render() {
         return (
