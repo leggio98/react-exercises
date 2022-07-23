@@ -59,6 +59,7 @@ formReset = () => {
             onChange = {this.handleChanger}
             />
             <button 
+            style= {{backgroundColor: (this.state.password.length) < 8 ? 'green' : 'red' }}
             data-testid="login"
             disabled = {!this.state.username || !this.state.password}
              onClick={this.loginButtonClick}>
