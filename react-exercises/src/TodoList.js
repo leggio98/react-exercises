@@ -15,6 +15,14 @@ class TodoList extends React.Component {
             items: [...prevState.items, prevState.value],
             value: '',
         }));
+<<<<<<< HEAD
+=======
+    }
+    resetItemsList = () => {
+        this.setState({
+            items: []
+        })
+>>>>>>> Lists-05
     }
     render() {
         return (
@@ -30,6 +38,7 @@ class TodoList extends React.Component {
                 value = {this.state.value}
                 />
                 <button onClick={this.addItem}>Add item</button>
+                <button onClick={this.resetItemsList}>Reset List</button>
             </div>
         )
     }
