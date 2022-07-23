@@ -3,6 +3,7 @@
 import React from "react"
 import { ClickCounter } from "./ClickCounter"
 import { ClickTracker } from "./ClickTracker"
+import { Container } from "./Container"
 import { Counter } from "./Counter"
 import { Hello } from "./Hello"
 import { InteractiveWelcome } from "./InteractiveWelcome"
@@ -14,6 +15,7 @@ import { UncontrolledLogin } from "./UncontrolledLogin"
 export class App extends React.Component {
     render () {
         return <div>
+            <Container>
             <Hello />
             <InteractiveWelcome value= {17} name={<strong>Andrea</strong>}  />
             <Counter />
@@ -22,6 +24,7 @@ export class App extends React.Component {
             <Login />
             <UncontrolledLogin />
             <TodoList />
+            </Container>
             </div>
     }
 }
