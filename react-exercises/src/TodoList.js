@@ -15,21 +15,25 @@ class TodoList extends React.Component {
             items: [...prevState.items, prevState.value],
             value: '',
         }));
-<<<<<<< HEAD
-=======
     }
     resetItemsList = () => {
         this.setState({
             items: []
         })
->>>>>>> Lists-05
+    }
+    removeCurrentLi = (event) => {
+        let tempArray = [...this.state.items];
+        tempArray.splice(event,1);
+        this.setState({items: tempArray})
     }
     render() {
         return (
             <div>
                 <ul>
                     {this.state.items.map((item, index) =>
-                    <li key={item + index}> {item}</li>
+                    <li key={item + index}> {item}
+                    <button onClick={() => this.removeCurrentLi(index) }>Remove</button>
+                    </li>
                     )}
                 </ul>
                 <input
