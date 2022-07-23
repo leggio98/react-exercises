@@ -15,8 +15,7 @@ import { UncontrolledLogin } from "./UncontrolledLogin"
 export class App extends React.Component {
     render () {
         return <div>
-            <Container>
-            <Hello />
+            <Container title={<Hello />}>
             <InteractiveWelcome value= {17} name={<strong>Andrea</strong>}  />
             <Counter />
             <ClickCounter />
