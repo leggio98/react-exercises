@@ -25,9 +25,9 @@ export class DisplayLanguage extends React.Component {
         </div>
         <div>
             <LanguageContext.Consumer>
-            { language => {
+            { (language) => {
                 return (
-                    <p>Testo da tradurre</p>
+                    <h1> Testo da tradurre</h1>    //Non ho capito cosa vuole l'esercizio
                 )
             }}
             </LanguageContext.Consumer>
