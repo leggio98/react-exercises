@@ -29,13 +29,9 @@ class TodoList extends React.Component {
     render() {
         return (
             <div>
-                <ul>
-                    {this.state.items.map((item, index) =>
-                    <li key={item + index}> {item}
-                    <button onClick={() => this.removeCurrentLi(index) }>Remove</button>
-                    </li>
-                    )}
-                </ul>
+         
+                    {this.props.render(this.state.items)}
+           
                 <input
                 type='text'
                 onChange = {this.saveInput}
@@ -49,3 +45,13 @@ class TodoList extends React.Component {
 }
 
 export default TodoList
+
+
+/*  <ul>
+{this.state.items.map((item, index) =>
+    <li key={item + index}> {item}
+    <button onClick={() => {item.splice(index,1)};
+this.setState({ items: items}) }>Remove</button>
+    </li>
+    )}
+</ul> */
