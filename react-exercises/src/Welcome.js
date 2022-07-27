@@ -6,17 +6,13 @@
 import React from "react";
 import { Age } from "./Age";
 
-export class Welcome extends React.Component {
+export function Welcome (){
 
-    render() {
+    
         return <div className="welcome">
             <p> Welcome, {this.props.name}!</p>
             { <Age value={this.props.value}/>}
         </div>
-    }
+    
 }
 
-
-Welcome.defaultProps = {
-    name : "World",
-}
