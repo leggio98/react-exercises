@@ -31,7 +31,7 @@ export class App extends React.Component {
             <Container title={<Hello />}>
             <InteractiveWelcome value= {17} name={<strong>Andrea</strong>}  />
             <Counter />
-            <Sum/>
+            <Sum numbers = {[1,2,3,4,5]}/>
             <ClickCounter />
             <ClickTracker />
             <Login />
