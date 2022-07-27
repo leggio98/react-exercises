@@ -6,12 +6,12 @@
 import React from "react";
 import { Age } from "./Age";
 
-export function Welcome (){
+export function Welcome (name = 'World', age = 17){
 
     
         return <div className="welcome">
-            <p> Welcome, {this.props.name}!</p>
-            { <Age value={this.props.value}/>}
+            <p> Welcome, {name}!</p>
+            { <Age value={age}/>}
         </div>
     
 }

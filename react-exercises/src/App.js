@@ -10,6 +10,7 @@ import { Hello } from "./Hello"
 import { InteractiveWelcome } from "./InteractiveWelcome"
 import { LanguageContext } from "./LanguageContext"
 import { Login } from "./Login"
+import { Sum } from "./Sum"
 import TodoList from "./TodoList"
 import { UncontrolledLogin } from "./UncontrolledLogin"
 
@@ -30,6 +31,7 @@ export class App extends React.Component {
             <Container title={<Hello />}>
             <InteractiveWelcome value= {17} name={<strong>Andrea</strong>}  />
             <Counter />
+            <Sum/>
             <ClickCounter />
             <ClickTracker />
             <Login />
