@@ -29,31 +29,7 @@ export class App extends React.Component {
     render () {
         return <div>
             <Container title={<Hello />}>
-            <InteractiveWelcome value= {17} name={<strong>Andrea</strong>}  />
-            <Counter />
-            <Sum numbers = {[1,2,3,4,5]}/>
-            <ClickCounter />
-            <ClickTracker />
-            <Login />
-            <UncontrolledLogin />
-            <TodoList
-          render = {(items) => {
-            return (
-              <div>
-              <ul>
-                    {items.map((item, index) =><li key={item + index}>{item}
-                    <button  onClick={() => {items.splice(index, 1);
-                    this.setState({
-                            items: items });}}>Remove Item</button>
-                    </li>)}
-                </ul>
-                </div>
-            )
-          }}>
-          </TodoList>
-          <LanguageContext.Provider value={this.state.language}>
-          <DisplayLanguage />
-          </LanguageContext.Provider>
+            <ClickCounter initialValue={0}/>
             </Container>
             </div>
     }

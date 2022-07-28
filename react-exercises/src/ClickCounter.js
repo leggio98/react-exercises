@@ -1,29 +1,27 @@
 // Create a ClickCounter class component that increments a counter every time a user clicks on a button. 
 // Render both the current value of the counter and the button within the ClickCounter component.
 
-import React from "react";
+import React, { useState } from "react";
 
-export class ClickCounter extends React.Component {
 
-    state = {
-        count: 0,
+export function ClickCounter({initialValue = 0}) {
+    const [counter, setCounter] = useState(initialValue)
+
+    function handleIncrementCounter () {
+        setCounter((c) => c + 1)
     }
 
-    incrementCounter = () => {
-        this.setState((state) => {
-            return {
-            count: state.count + 1
-            }
-        })
+    function handleDecreaseCounter () {
+        if (counter > 0) {
+            setCounter((c) => c - 1)
+        }
     }
-    render() {
+    
         return (
             <div>
-                <p> Count: {this.state.count}</p>
-                <button onClick={this.incrementCounter}>Increment</button>
+                <h2> Count: {counter}</h2>
+                <button onClick={handleDecreaseCounter} disabled={(counter === 0) ? true : false}>Decrease</button>
+                <button onClick={handleIncrementCounter}>Increment</button>
             </div>
         )
-            
-        
     }
-}
