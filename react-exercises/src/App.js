@@ -29,7 +29,10 @@ export class App extends React.Component {
     render () {
         return <div>
             <Container title={<Hello />}>
+            
             <ClickCounter initialValue={0}/>
+            <Login />
+            
             </Container>
             </div>
     }
