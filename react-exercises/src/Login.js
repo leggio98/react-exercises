@@ -14,28 +14,49 @@ export function Login (){
         password: '',
         remember: false
     })
-   
+   function handleChanger (event) {
+       const {name, value, type, checked} = event.target
+
+    setData((data) => {
+        return {
+            ...data,
+       [name]: type === 'checkbox' ? checked : value
+
+        }
+    }
+    )
+   }
+   function formReset () {
+   setData(() => {
+    return {
+        username: '',
+        password: '',
+        remember: false
+    }
+   })
+   }
+
         return (
             <div>
             <input 
             name = 'username'
             value = {data.username}
-            onChange = {this.handleChanger}
+            onChange = {handleChanger}
             />
             <input 
             name = 'password'
             value = {data.password}
             type = 'password'
-            onChange = {this.handleChanger}
+            onChange = {handleChanger}
             />
             <input
             name = 'remember'
             type = 'checkbox'
             checked = {data.remember}
-            onChange = {this.handleChanger}
+            onChange = {handleChanger}
             />
             <button
-            onClick={this.formReset}>
+            onClick={formReset}>
                 Reset
             </button>
             </div>
