@@ -10,32 +10,27 @@
 //Modify the Counter component so that the interval is initialized within the componentDidMount
 // life cycle method instead of the constructor. Is the constructor still required?
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { CounterDisplay } from "./CounterDisplay";
 
-export class Counter extends React.Component {
-    
-    state = {
-        count: this.props.initialValue,
-    }
-    componentDidMount() {
-        setInterval(() => {
-            this.setState((state) => {
-                return {
-                    count: state.count + this.props.incrementBy
-                }
-            })
-        }, this.props.intervalTime)
-    }
-    render() {
-        return (
-            <CounterDisplay count = {this.state.count} />
-        )
-    }
-}
 
-Counter.defaultProps = {
-    intervalTime: 1000,
-    initialValue: 0,
-    incrementBy: 1,
-} 
+
+export function Counter () {
+    const [counter, setCounter] = useState(0)
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCounter(counter + 1)
+        }, 1000)
+        
+        return () => {
+            clearInterval(interval)
+        }
+    }, [counter])
+
+    return (
+        <div>
+            <h2> Count: {counter}</h2>
+        </div>
+    )
+}
