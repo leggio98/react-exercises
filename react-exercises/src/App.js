@@ -30,7 +30,7 @@ export class App extends React.Component {
         return <div>
             <Container title={<Hello />}>
             
-            <ClickCounter initialValue={0}/>
+            <ClickCounter initialValue={0} />
             <Login />
             
             </Container>
