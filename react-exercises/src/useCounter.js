@@ -25,3 +25,6 @@ function useCounter ({initialValue = 0} ) {
 
 
 export default useCounter
+
+
+//Lo avevo già fatto con useCallback
