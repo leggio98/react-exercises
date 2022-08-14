@@ -3,8 +3,9 @@
 import {createRoot} from 'react-dom/client';
 import { App } from './App';
 import './index.css';
+import Root from './Root';
 
 const container = document.querySelector('#root');
 const root = createRoot(container);
 
-root.render(<App />);
+root.render(<Root />);

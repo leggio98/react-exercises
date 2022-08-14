@@ -14,6 +14,8 @@ import { Login } from "./Login"
 import { Sum } from "./Sum"
 import TodoList from "./TodoList"
 import { UncontrolledLogin } from "./UncontrolledLogin"
+import {Routes, Route} from 'react-router-dom'
+import { Welcome } from "./Welcome"
 
 
 
@@ -30,10 +32,9 @@ export class App extends React.Component {
     render () {
         return <div>
             <Container title={<Hello />}>
-            <Counter />
-            <ClickCounter initialValue={0}/>
-            <Login />
-            <GitHubUser />
+            <Routes>
+                <Route path='/' element={<Welcome name={'Jimmy'}/>}/>
+            </Routes>
             </Container>
             </div>
     }
