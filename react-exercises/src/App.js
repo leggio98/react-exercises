@@ -14,7 +14,7 @@ import { Login } from "./Login"
 import { Sum } from "./Sum"
 import TodoList from "./TodoList"
 import { UncontrolledLogin } from "./UncontrolledLogin"
-import {Routes, Route} from 'react-router-dom'
+import {Routes, Route, Link} from 'react-router-dom'
 import { Welcome } from "./Welcome"
 import ShowGitHubUser from "./ShowGitHubUser"
 
@@ -33,10 +33,16 @@ export class App extends React.Component {
     render () {
         return <div>
             <Container title={<Hello />}>
+                <div>
+                    <Link to='/'>Welcome</Link>
+                    <Link to='/counter'>Counter</Link>
+                    <Link to='users/:username'>User</Link>
+
+                </div>
             <Routes>
                 <Route path='/' element={<Welcome name={'Jimmy'}/>}/>
                 <Route path='/counter' element={<Counter/>} />
-                <Route path='users/:username' element={<ShowGitHubUser/>} />
+                <Route path='users/:username' element={<ShowGitHubUser username={'mario'}/>} />
             </Routes>
             </Container>
             </div>
