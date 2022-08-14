@@ -17,6 +17,7 @@ import { UncontrolledLogin } from "./UncontrolledLogin"
 import {Routes, Route, Link} from 'react-router-dom'
 import { Welcome } from "./Welcome"
 import ShowGitHubUser from "./ShowGitHubUser"
+import { GitHubUserList } from "./GitHubUserList"
 
 
 
@@ -36,14 +37,18 @@ export class App extends React.Component {
                 <div>
                     <Link to='/'>Welcome</Link>
                     <Link to='/counter'>Counter</Link>
-                    <Link to="users/mario">My Github Username</Link>
+                    <Link to="users">Github Username Searcher</Link>
 
                 </div>
             <Routes>
                 <Route path='/' element={<Welcome name={'Jimmy'}/>}/>
                 <Route path='/counter' element={<Counter/>} />
-                <Route path="users" element={<GithubUserList />}>
-						<Route path=":username" element={<ShowGithubUser />} />
+                <Route path="users" element={<GitHubUserList />}>
+                        <Route
+							index
+							element={<p>please insert a name and click the button</p>}
+						/>
+						<Route path=":username" element={<ShowGitHubUser />} />
 					</Route>
                 <Route path='*' element={<div>
                     <p>Path not found</p>
