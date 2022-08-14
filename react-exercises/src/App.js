@@ -34,6 +34,7 @@ export class App extends React.Component {
             <Container title={<Hello />}>
             <Routes>
                 <Route path='/' element={<Welcome name={'Jimmy'}/>}/>
+                <Route path='/counter' element={<Counter/>} />
             </Routes>
             </Container>
             </div>
