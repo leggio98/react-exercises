@@ -16,6 +16,7 @@ import TodoList from "./TodoList"
 import { UncontrolledLogin } from "./UncontrolledLogin"
 import {Routes, Route} from 'react-router-dom'
 import { Welcome } from "./Welcome"
+import ShowGitHubUser from "./ShowGitHubUser"
 
 
 
@@ -35,6 +36,7 @@ export class App extends React.Component {
             <Routes>
                 <Route path='/' element={<Welcome name={'Jimmy'}/>}/>
                 <Route path='/counter' element={<Counter/>} />
+                <Route path='users/:username' element={<ShowGitHubUser/>} />
             </Routes>
             </Container>
             </div>
