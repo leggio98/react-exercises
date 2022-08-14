@@ -3,6 +3,7 @@
 
 import { useState } from "react"
 import { GitHubUser } from "./GitHubUser"
+import { Outlet, Link } from "react-router-dom"
 
 
 
@@ -22,9 +23,14 @@ function inputBinder (e) {
         <div>
             <input name = {userToPush} onChange ={inputBinder}/>
             <button onClick={addUser}> Add user</button>
-            {usersArray.map((user,index) => (
-                <GitHubUser key={user + index} username={user}/>
-            ))}
+            <ul>
+				{usersArray.map((user, index) => (
+					<li key={index}>
+						<Link to={`/users/${user}`}>{user}</Link>
+					</li>
+				))}
+			</ul>
+			<Outlet />
         </div>
     )
 }

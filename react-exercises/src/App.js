@@ -36,17 +36,19 @@ export class App extends React.Component {
                 <div>
                     <Link to='/'>Welcome</Link>
                     <Link to='/counter'>Counter</Link>
-                    <Link to='users/:username'>User</Link>
+                    <Link to="users/mario">My Github Username</Link>
 
                 </div>
             <Routes>
                 <Route path='/' element={<Welcome name={'Jimmy'}/>}/>
                 <Route path='/counter' element={<Counter/>} />
-                <Route path='users/:username' element={<ShowGitHubUser username={'mario'}/>} />
+                <Route path="users" element={<GithubUserList />}>
+						<Route path=":username" element={<ShowGithubUser />} />
+					</Route>
                 <Route path='*' element={<div>
                     <p>Path not found</p>
                     <Link to='/'>Home</Link>
-                    </div>}
+                    </div>} />
             </Routes>
             </Container>
             </div>
